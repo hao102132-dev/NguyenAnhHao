@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #ff5722;
+      --bg: #f5f5f5;
+      --text: #333;
+      --radius: 12px;
+      --spacing: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      padding-bottom: 90px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing);
+      background: linear-gradient(90deg, #ff5722, #ff8a65);
+      color: white;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+    }
+
+    main {
+      padding: var(--spacing);
+    }
+
+    section {
+      background: white;
+      padding: var(--spacing);
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: var(--primary);
+      font-size: 16px;
+    }
+
+    article {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      align-items: center;
+    }
+
+    article:last-child {
+      border-bottom: none;
+    }
+
+    article img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .info {
+      flex: 1;
+    }
+
+    .price {
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    button:hover {
+      background: #e64a19;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    }
+
+    footer p {
+      font-weight: bold;
+      color: var(--primary);
+      font-size: 18px;
+    }
+
+    footer button {
+      padding: 12px 18px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h2>🛒 Thanh toán</h2>
+  <a href="#">← Quay lại</a>
+</header>
+
+<main>
+
+  <!-- ADDRESS -->
+  <section>
+    <h2>Địa chỉ giao hàng</h2>
+    <p>Nguyễn Anh Hào, 123 Lạch Tray, Ngô Quyền, Hải Phòng</p>
+    <button>Thay đổi</button>
+  </section>
+
+  <!-- ITEMS -->
+  <section>
+    <h2>Sản phẩm</h2>
+
+    <article>
+      <img src="https://images.unsplash.com/photo-1518443895914-6b6b5e7a94e4?w=300">
+      <div class="info">
+        <h3>Tai nghe không dây</h3>
+        <p>Số lượng: 1</p>
+        <p class="price">790.000đ</p>
+      </div>
+    </article>
+
+    <article>
+      <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300">
+      <div class="info">
+        <h3>Giá đỡ điện thoại</h3>
+        <p>Số lượng: 2</p>
+        <p class="price">240.000đ</p>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- PAYMENT -->
+  <section>
+    <h2>Phương thức thanh toán</h2>
+
+    <label>
+      <input type="radio" name="pay" checked />
+      Thẻ ngân hàng
+    </label>
+
+    <label>
+      <input type="radio" name="pay" />
+      Ví điện tử (Momo, ZaloPay)
+    </label>
+
+    <label>
+      <input type="radio" name="pay" />
+      Thanh toán khi nhận hàng (COD)
+    </label>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>Tổng: 1.030.000đ</p>
+  <button>Đặt hàng</button>
+</footer>
+
+</body>
+</html>

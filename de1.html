@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop App</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #ff5722;
+      --secondary: #ff8a65;
+      --bg: #f5f5f5;
+      --text: #333;
+      --radius: 12px;
+      --spacing: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* HEADER */
+    .header {
+      padding: var(--spacing);
+      background: linear-gradient(90deg, #ff5722, #ff8a65);
+      color: white;
+    }
+
+    .search {
+      width: 100%;
+      margin-top: 10px;
+      padding: 8px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    /* CONTAINER */
+    .container {
+      padding: var(--spacing);
+    }
+
+    /* BANNER */
+    .banner {
+      height: 160px;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      background: url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd53?w=1200') center/cover;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 15px;
+      color: white;
+      font-weight: 600;
+    }
+
+    .banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      border-radius: var(--radius);
+    }
+
+    .banner span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* CARD */
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .price {
+      color: var(--primary);
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    /* BUTTON */
+    .btn {
+      background: var(--primary);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background: #e64a19;
+    }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    /* TABLET */
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* DESKTOP */
+    @media (min-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .container {
+        width: 80%;
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h2>🔥 Shop Now</h2>
+    <input class="search" type="text" placeholder="Tìm sản phẩm...">
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+
+    <!-- BANNER -->
+    <div class="banner">
+      <span>🔥 Giảm giá đến 50%</span>
+    </div>
+
+    <!-- PRODUCTS -->
+    <section>
+      <h3>Sản phẩm nổi bật</h3>
+
+      <div class="grid">
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600">
+          <h4>Giày Sneaker</h4>
+          <p class="price">450.000đ</p>
+          <button class="btn">Mua ngay</button>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600">
+          <h4>Đồng hồ</h4>
+          <p class="price">1.200.000đ</p>
+          <button class="btn">Mua ngay</button>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600">
+          <h4>Túi xách</h4>
+          <p class="price">320.000đ</p>
+          <button class="btn">Mua ngay</button>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1518443895914-6b6b5e7a94e4?w=600">
+          <h4>Tai nghe</h4>
+          <p class="price">250.000đ</p>
+          <button class="btn">Mua ngay</button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#">🏠 Home</a>
+    <a href="#">🛒 Cart</a>
+    <a href="#">❤️ Wishlist</a>
+    <a href="#">👤 Profile</a>
+  </nav>
+
+</body>
+</html>

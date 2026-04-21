@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop Analytics</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #ff5722;
+      --secondary: #ff8a65;
+      --bg: #f4f6f9;
+      --text: #333;
+      --radius: 12px;
+      --spacing: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing);
+      background: linear-gradient(90deg, #ff5722, #ff8a65);
+      color: white;
+    }
+
+    header button {
+      background: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 20px;
+      padding: var(--spacing);
+    }
+
+    aside {
+      background: white;
+      padding: var(--spacing);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    aside select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    section {
+      background: white;
+      padding: var(--spacing);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    /* METRICS */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .metric {
+      background: #fff3e0;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .metric p {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    /* CHART IMAGE */
+    .chart img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* TABLE */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background: #ffe0b2;
+    }
+
+    tr:hover {
+      background: #fff3e0;
+    }
+
+    /* PRODUCT CELL */
+    .product {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .product img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>📊 Shop Analytics</h1>
+  <button>Export</button>
+</header>
+
+<main>
+
+  <!-- SIDEBAR -->
+  <aside>
+    <h2>Bộ lọc</h2>
+
+    <label>Khoảng thời gian</label>
+    <select>
+      <option>7 ngày</option>
+      <option>30 ngày</option>
+      <option>90 ngày</option>
+    </select>
+
+    <label>Kênh bán</label>
+    <select>
+      <option>Tất cả</option>
+      <option>Online</option>
+      <option>Offline</option>
+    </select>
+  </aside>
+
+  <div>
+
+    <!-- METRICS -->
+    <section>
+      <h2>Chỉ số chính</h2>
+
+      <div class="metrics">
+        <div class="metric">
+          <h3>Khách truy cập</h3>
+          <p>42,100</p>
+        </div>
+
+        <div class="metric">
+          <h3>Tỷ lệ mua</h3>
+          <p>3.8%</p>
+        </div>
+
+        <div class="metric">
+          <h3>Tỷ lệ thoát</h3>
+          <p>28%</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHART IMAGE -->
+    <section class="chart">
+      <h2>Biểu đồ doanh thu</h2>
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200">
+    </section>
+
+    <!-- TABLE -->
+    <section>
+      <h2>Sản phẩm nổi bật</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Sản phẩm</th>
+            <th>Lượt xem</th>
+            <th>Chuyển đổi</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td class="product">
+              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200">
+              Giày Sneaker
+            </td>
+            <td>18,400</td>
+            <td>4.2%</td>
+          </tr>
+
+          <tr>
+            <td class="product">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=200">
+              Đồng hồ
+            </td>
+            <td>8,120</td>
+            <td>6.1%</td>
+          </tr>
+
+          <tr>
+            <td class="product">
+              <img src="https://images.unsplash.com/photo-1518443895914-6b6b5e7a94e4?w=200">
+              Tai nghe
+            </td>
+            <td>5,900</td>
+            <td>1.9%</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+
+</main>
+
+</body>
+</html>
